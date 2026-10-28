@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0d0917;
+  --color-paper: #f6f3fb;
+  --color-muted: #aaa2b8;
+  --color-violet: #b08af5;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+html { color-scheme: dark; background: var(--color-ink); }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+::selection { background: #b08af5; color: #0d0917; }
+.orbit-scene { perspective: 950px; isolation: isolate; }
+.orbit-scene::before { content: ''; position: absolute; inset: 20% 0 0; background: radial-gradient(ellipse, #8441df35, transparent 65%); filter: blur(25px); }
+.sculpture { width: 310px; height: 310px; position: relative; transform-style: preserve-3d; transform: rotateX(57deg) rotateZ(-35deg); animation: float 8s ease-in-out infinite; }
+.slab { position: absolute; inset: 0; border-radius: 46px; border: 2px solid #ddc5ffb0; background: linear-gradient(135deg, #d5b8ff50, #44216418 35%, #c4a2ef65 65%, #1d102b80); box-shadow: inset 2px 2px 3px #f5eaff90, inset -8px -8px 18px #12071f, 12px 16px 0 #241431, 13px 17px 0 #936ac4, 14px 18px 22px #0009; }
+.slab::after { content: ''; position: absolute; inset: 42px; border: 1px solid #e5ceff99; border-radius: 24px; background: #10081b90; box-shadow: inset 8px 10px 20px #000a, 1px 1px 0 #efdbff; }
+.slab-top { transform: translateZ(100px); }
+.slab-mid { transform: translateZ(0); background: linear-gradient(130deg, #777180, #18131f 30%, #605269 70%, #17101e); }
+.slab-bottom { transform: translateZ(-100px); }
+.core { position: absolute; inset: 86px; transform: translateZ(48px) rotateZ(45deg); background: linear-gradient(120deg,#f1d5ff,#a55bf7 38%,#4f198b 65%,#d6b7ff); box-shadow: 0 0 75px #a255ff90; border: 1px solid #e8c6ff; }
+.core::after { content: ''; position: absolute; inset: 0; background: conic-gradient(from 45deg, transparent, #ffffff80, transparent, #2f0758b0, transparent); }
+@keyframes float { 0%,100% { transform: translateY(0) rotateX(57deg) rotateZ(-35deg); } 50% { transform: translateY(-14px) rotateX(60deg) rotateZ(-31deg); } }
+@media (max-width: 767px) { .sculpture { width: 225px; height: 225px; } .slab { border-radius: 32px; } .slab::after { inset: 30px; border-radius: 16px; } .core { inset: 64px; } .slab-top { transform: translateZ(75px); } .slab-bottom { transform: translateZ(-75px); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }

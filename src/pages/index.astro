@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Brand from '../components/Brand.astro';
+const year = new Date().getFullYear();
+---
+<BaseLayout title="Under Maintenance | iGaming Deck" description="iGaming Deck is temporarily offline for maintenance. We'll be back soon. Thank you for your patience.">
+  <div class="mx-auto flex min-h-svh max-w-[1440px] flex-col px-6 md:px-14 lg:px-20">
+    <header class="flex items-center justify-between gap-5 border-b border-white/10 py-7 md:py-9">
+      <Brand />
+      <span class="flex items-center gap-2.5 text-[10px] tracking-[0.15em] text-muted sm:text-[11px]"><span class="h-1.5 w-1.5 rounded-full bg-violet shadow-[0_0_12px_#b08af580]"></span> MAINTENANCE MODE</span>
+    </header>
+    <main id="main" class="grid flex-1 items-center gap-4 py-14 md:grid-cols-[1.1fr_1fr] md:gap-0 md:py-20">
+      <section class="relative z-10">
+        <p class="mb-7 flex items-center gap-3 text-[10px] tracking-[0.19em] text-muted sm:text-xs"><span aria-hidden="true" class="text-2xl text-violet">✳</span> A BRIEF PAUSE. A BETTER EXPERIENCE.</p>
+        <h1 class="max-w-[750px] text-[clamp(3.5rem,7.4vw,7rem)] leading-[0.99] font-normal tracking-[-0.065em]">Under<br /><span class="text-violet">maintenance.</span></h1>
+        <p class="mt-8 max-w-[390px] text-base leading-[1.8] text-muted md:text-lg">We're taking a little time to fine-tune things.<br class="hidden sm:block" /> iGaming Deck will be back soon.</p>
+        <div class="mt-10 flex items-center gap-3 border-l border-violet/60 py-1 pl-4 text-xs leading-6 text-muted"><span>Thank you for your patience.<br /><span class="text-paper">We look forward to welcoming you back.</span></span></div>
+      </section>
+      <div aria-hidden="true" class="orbit-scene relative flex h-[340px] items-center justify-center md:h-[470px] lg:h-[540px]">
+        <div class="sculpture"><div class="slab slab-bottom"></div><div class="slab slab-mid"></div><div class="core"></div><div class="slab slab-top"></div></div>
+        <span class="absolute right-0 bottom-0 text-[9px] leading-5 tracking-[0.2em] text-muted/70 md:bottom-3">A LITTLE REFINEMENT.<br />A NEW PERSPECTIVE.</span>
+      </div>
+    </main>
+    <footer class="flex flex-col justify-between gap-3 border-t border-white/10 py-6 text-[10px] tracking-[0.04em] text-muted/80 sm:flex-row sm:items-center md:py-8">
+      <p>© {year} iGaming Deck. All rights reserved.</p>
+      <p class="flex items-center gap-2"><span aria-hidden="true" class="text-violet">↗</span> Back soon. Better than before.</p>
+    </footer>
+  </div>
+</BaseLayout>
